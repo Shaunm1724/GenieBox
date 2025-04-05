@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart'; // For Clipboard
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import '../providers/recipe_provider.dart';
 
 class RecipeCreatorPage extends ConsumerStatefulWidget {
@@ -166,7 +167,15 @@ class _RecipeCreatorPageState extends ConsumerState<RecipeCreatorPage> {
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
                       const Divider(height: 20),
-                      SelectableText(recipeState.generatedRecipe), // Make text selectable
+                      //SelectableText(recipeState.generatedRecipe), // Make text selectable
+                      MarkdownBody(
+                        data: recipeState.generatedRecipe,
+                        selectable: true, // Allows selecting the rendered text
+                        // Optional: Customize styling
+                        styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
+                          p: Theme.of(context).textTheme.bodyMedium, // Example style override
+                        ),
+                      ),
                       const SizedBox(height: 10),
                        Row(
                          mainAxisAlignment: MainAxisAlignment.end,

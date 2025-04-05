@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // Import speech_to_text and permission_handler if implementing voice input
 // import 'package:speech_to_text/speech_to_text.dart' as stt;
@@ -220,7 +221,12 @@ class _StoryPoemPageState extends ConsumerState<StoryPoemPage> {
                             style: Theme.of(context).textTheme.titleLarge,
                           ),
                           const Divider(height: 20),
-                          SelectableText(creativeState.generatedContent),
+                          // SelectableText(creativeState.generatedContent),
+                          MarkdownBody(
+                            data: creativeState.generatedContent,
+                            selectable: true,
+                            styleSheet: MarkdownStyleSheet.fromTheme(Theme.of(context)), // Optional styling
+                          ),
                           const SizedBox(height: 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
