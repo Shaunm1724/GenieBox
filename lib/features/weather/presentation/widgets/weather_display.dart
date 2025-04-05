@@ -44,11 +44,11 @@ class WeatherDisplay extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            '${weatherData.tempC.toStringAsFixed(1)}°C / ${weatherData.tempF.toStringAsFixed(1)}°F',
+            '${weatherData.tempC.toStringAsFixed(1)}°C',// / ${weatherData.tempF.toStringAsFixed(1)}°F',
             style: textTheme.displayMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           Text(
-            'Feels like: ${weatherData.feelsLikeC.toStringAsFixed(1)}°C / ${weatherData.feelsLikeF.toStringAsFixed(1)}°F',
+            'Feels like: ${weatherData.feelsLikeC.toStringAsFixed(1)}°C',// / ${weatherData.feelsLikeF.toStringAsFixed(1)}°F',
             style: textTheme.bodyLarge,
           ),
           const SizedBox(height: 20),
