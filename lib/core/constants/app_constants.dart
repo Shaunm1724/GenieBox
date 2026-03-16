@@ -7,7 +7,7 @@ class AppConstants {
 
   // --- API Endpoints ---
   // Adjust Gemini endpoint based on the specific model and API version
-  static const String geminiApiEndpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'; // Example endpoint
+  static const String geminiApiEndpoint = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent'; // Example endpoint
   static const String weatherApiBaseUrl = 'http://api.weatherapi.com/v1';
   static const String weatherApiCurrentEndpoint = '/current.json';
   static const String weatherApiForecastEndpoint = '/forecast.json'; // Needs days param
